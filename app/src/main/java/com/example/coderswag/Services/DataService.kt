@@ -10,22 +10,32 @@ object DataService {
         Category("HATS", "hatimage"),
         Category("DIGITAL", "digitalgoodsimage")
     )
-    val hats = listOf(
-        Product("Devs lopes Graphic Beanie","$18", "hat01"),
-        Product("Devs lopes Hat Black","$20", "hat02"),
-        Product("Devs lopes Hat White","$25", "hat03"),
-        Product("Devs lopes Snap back ","$22", "hat04")
+    private val hats = listOf(
+        Product("Devs lopes Graphic Beanie","$18", "hat1"),
+        Product("Devs lopes Hat Black","$20", "hat2"),
+        Product("Devs lopes Hat White","$25", "hat3"),
+        Product("Devs lopes Snap back ","$22", "hat4")
     )
-    val hoodies = listOf(
-        Product("Devs lopes Hoodie Gray ","$28", "hoodie01"),
-        Product("Devs lopes Hoodie Red ","$25", "hoodie02"),
-        Product("Devs lopes Hoodie Blue ","$18", "hoodie03"),
-        Product("Devs lopes Hoodie Black ","$15", "hoodie04")
+    private val hoodies = listOf(
+        Product("Devs lopes Hoodie Gray ","$28", "hoodie1"),
+        Product("Devs lopes Hoodie Red ","$25", "hoodie2"),
+        Product("Devs lopes Hoodie Blue ","$18", "hoodie3"),
+        Product("Devs lopes Hoodie Black ","$15", "hoodie4")
     )
-    val shorts = listOf(
-        Product("Devs lopes Short Gray ","$20", "shirt01"),
-        Product("Devs lopes Badge Light Gray","$15", "shirt02"),
-        Product("Devs lopes Hustle ","$18", "shirt03"),
-        Product("Kick flip Studios ","$14", "shirt04")
+    private val shorts = listOf(
+        Product("Devs lopes Short Gray ","$20", "shirt1"),
+        Product("Devs lopes Badge Light Gray","$15", "shirt2"),
+        Product("Devs lopes Hustle ","$18", "shirt3"),
+        Product("Kick flip Studios ","$14", "shirt4")
     )
+    private val digitalGood = listOf<Product>()
+
+    fun getProducts(category: String): List<Product>{
+        return when(category){
+            "SHIRTS" -> shorts
+            "HOODIES"-> hoodies
+            "HATS"-> hats
+            else -> digitalGood
+        }
+    }
 }
