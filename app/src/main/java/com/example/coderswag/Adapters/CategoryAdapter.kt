@@ -12,6 +12,7 @@ import com.example.coderswag.R
 
 class CategoryAdapter(private val context: Context, private val categories: List<Category>) :
     BaseAdapter() {
+
     override fun getCount(): Int {
         return categories.count()
     }
