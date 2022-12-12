@@ -33,11 +33,12 @@ class CategoryAdapter(private val context: Context, private val categories: List
             holder = ViewHolder()
             holder.categoryImage = categoryView.findViewById(R.id.categoryImage)
             holder.categoryName = categoryView.findViewById(R.id.categoryName)
-
+            println("I am from \"if\"")
             categoryView.tag = holder
         } else {
             holder = convertView.tag as ViewHolder
             categoryView = convertView
+            println("I am from \"else\"")
         }
         val category = categories[position]
 
