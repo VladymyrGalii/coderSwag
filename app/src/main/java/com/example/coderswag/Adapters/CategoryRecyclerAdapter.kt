@@ -13,7 +13,7 @@ import com.example.coderswag.R
 class CategoryRecyclerAdapter(
     private val context: Context,
     private val categories: List<Category>,
-    val itemClick: (Category) -> Unit
+    private val itemClick: (Category) -> Unit
 ) :
     RecyclerView.Adapter<CategoryRecyclerAdapter.Holder>() {
 
@@ -31,8 +31,8 @@ class CategoryRecyclerAdapter(
     }
 
     inner class Holder(itemView: View, val itemClick: (Category) -> Unit) : RecyclerView.ViewHolder(itemView) {
-        val categoryImage = itemView?.findViewById<ImageView>(R.id.categoryImage)
-        val categoryName = itemView?.findViewById<TextView>(R.id.categoryName)
+        private val categoryImage = itemView?.findViewById<ImageView>(R.id.categoryImage)
+        private val categoryName = itemView?.findViewById<TextView>(R.id.categoryName)
 
         fun bindCategory(category: Category, context: Context) {
             val resourceId = context.resources.getIdentifier(category.image, "drawable",
